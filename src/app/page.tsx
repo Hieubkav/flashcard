@@ -316,16 +316,16 @@ export default function Home() {
                   >
                     {/* Front of card */}
                     <div 
-                      className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl p-8 flex flex-col items-center justify-center backface-hidden border border-gray-100"
+                      className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl p-8 flex flex-col gap-6 overflow-hidden backface-hidden border border-gray-100"
                       style={{ backfaceVisibility: 'hidden' }}
                     >
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-medium mb-6">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-medium">
                         {currentCard.type}
                       </div>
-                      <div className="text-xl md:text-2xl font-bold text-gray-800 text-center leading-relaxed">
+                      <div className="flex-1 w-full overflow-y-auto text-center text-xl md:text-2xl font-bold text-gray-800 leading-relaxed pr-1">
                         {currentCard.question}
                       </div>
-                      <div className="mt-8 text-xs text-gray-400 flex items-center gap-1">
+                      <div className="text-xs text-gray-400 flex items-center gap-1 justify-center pt-4">
                         <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
                         <span>Press Space or Enter to flip</span>
                         <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
@@ -334,17 +334,17 @@ export default function Home() {
 
                     {/* Back of card */}
                     <div 
-                      className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl shadow-2xl p-8 flex flex-col items-center justify-center rotate-y-180 backface-hidden"
+                      className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl shadow-2xl p-8 flex flex-col gap-6 overflow-hidden rotate-y-180 backface-hidden"
                       style={{ 
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
                       }}
                       aria-hidden={!isFlipped && !showAll}
                     >
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium mb-6">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
                         {currentCard.type}
                       </div>
-                      <div className="text-xl md:text-2xl font-bold text-white text-center leading-relaxed">
+                      <div className="flex-1 w-full overflow-y-auto text-center text-xl md:text-2xl font-bold text-white leading-relaxed pr-1">
                         {currentCard.answer}
                       </div>
                     </div>

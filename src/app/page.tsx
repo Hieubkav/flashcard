@@ -25,16 +25,16 @@ class ErrorBoundary extends React.Component<
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center p-4">
-          <div className="max-w-md w-full bg-white rounded-3xl shadow-2xl p-8 text-center">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <RotateCcw className="w-8 h-8 text-red-600" />
+        <div className="min-h-screen bg-[#f5f1e6] flex items-center justify-center p-4">
+          <div className="max-w-md w-full bg-stone-100 rounded-3xl shadow-xl p-8 text-center border border-stone-200">
+            <div className="w-16 h-16 bg-stone-200 rounded-full flex items-center justify-center mx-auto mb-4">
+              <RotateCcw className="w-8 h-8 text-stone-600" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Oops! Something went wrong</h2>
-            <p className="text-gray-600 mb-6">Please refresh the page or check your data file.</p>
+            <h2 className="text-2xl font-bold text-stone-800 mb-2">Oops! Something went wrong</h2>
+            <p className="text-stone-600 mb-6">Please refresh the page or check your data file.</p>
             <button
               onClick={() => window.location.reload()}
-              className="px-6 py-3 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-2xl font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+              className="px-6 py-3 bg-stone-700 text-stone-100 rounded-2xl font-medium hover:bg-stone-800 transition-colors duration-200"
             >
               Refresh Page
             </button>
@@ -50,28 +50,28 @@ class ErrorBoundary extends React.Component<
 // Empty State Component
 const EmptyState = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#f5f1e6] flex items-center justify-center p-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-3xl font-semibold text-stone-700 mb-4">
             Flashcard
           </h1>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-2xl p-12 text-center">
-          <div className="w-24 h-24 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Plus className="w-12 h-12 text-indigo-600" />
+        <div className="bg-stone-100 rounded-3xl shadow-xl p-12 text-center border border-stone-200">
+          <div className="w-24 h-24 bg-stone-200 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Plus className="w-12 h-12 text-stone-600" />
           </div>
           
-          <h2 className="text-2xl font-bold text-gray-800 mb-3">No Flashcards Available</h2>
-          <p className="text-gray-600 mb-8 leading-relaxed">
+          <h2 className="text-2xl font-semibold text-stone-800 mb-3">No Flashcards Available</h2>
+          <p className="text-stone-600 mb-8 leading-relaxed">
             Get started by adding your first flashcard in the data file.
           </p>
 
-          <div className="bg-indigo-50 rounded-2xl p-6 text-left">
-            <h3 className="font-semibold text-indigo-900 mb-3">How to add flashcards:</h3>
-            <ol className="space-y-2 text-sm text-indigo-800">
-              <li>1. Open <code className="bg-indigo-100 px-2 py-1 rounded">src/data/flashcards.ts</code></li>
+          <div className="bg-stone-200/60 rounded-2xl p-6 text-left border border-stone-200">
+            <h3 className="font-semibold text-stone-800 mb-3">How to add flashcards:</h3>
+            <ol className="space-y-2 text-sm text-stone-700">
+              <li>1. Open <code className="bg-stone-300 px-2 py-1 rounded">src/data/flashcards.ts</code></li>
               <li>2. Add new objects to the flashcardsData array</li>
               <li>3. Save the file to see changes</li>
             </ol>
@@ -79,7 +79,7 @@ const EmptyState = () => {
 
           <button
             onClick={() => window.location.reload()}
-            className="mt-6 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-2xl font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+            className="mt-6 px-6 py-3 bg-stone-700 text-stone-100 rounded-2xl font-medium hover:bg-stone-800 transition-colors duration-200"
           >
             Reload After Adding Data
           </button>
@@ -218,68 +218,68 @@ export default function Home() {
 
   return (
     <ErrorBoundary>
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      <div className="min-h-screen bg-[#f5f1e6] text-stone-800">
         <div className="max-w-lg mx-auto min-h-screen flex flex-col p-4">
           {/* Skip to main content for accessibility */}
           <a 
             href="#main-content" 
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-indigo-600 text-white px-4 py-2 rounded-lg"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-stone-700 text-stone-100 px-4 py-2 rounded-lg"
           >
             Skip to main content
           </a>
 
           {/* Header */}
-          <header className="text-center py-6">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
-              Flashcard
-            </h1>
-            <div className="flex items-center justify-center gap-2 text-sm">
-              <span className="text-gray-500">Flashcard</span>
-              <span className="font-semibold text-indigo-600" aria-label={`Current flashcard ${currentIndex + 1} of ${filteredFlashcards.length}`}>
-                {currentIndex + 1}/{filteredFlashcards.length}
-              </span>
-              <span className="text-gray-500">trong {selectedType}</span>
-            </div>
+            <header className="text-center py-6">
+              <h1 className="text-3xl font-semibold text-stone-800 mb-2">
+                Flashcard
+              </h1>
+              <div className="flex items-center justify-center gap-2 text-sm text-stone-600">
+                <span>Flashcard</span>
+                <span className="font-semibold text-stone-800" aria-label={`Current flashcard ${currentIndex + 1} of ${filteredFlashcards.length}`}>
+                  {currentIndex + 1}/{filteredFlashcards.length}
+                </span>
+                <span>trong {selectedType}</span>
+              </div>
           </header>
 
           {/* Controls */}
           <div className="flex gap-3 mb-6">
             {/* Filter Dropdown */}
-            <div className="relative flex-1">
-              <label htmlFor="type-filter" className="sr-only">Filter by type</label>
-              <select
-                id="type-filter"
-                value={selectedType}
-                onChange={(e) => setSelectedType(e.target.value)}
-                className="w-full px-4 py-3 pr-10 text-sm border-0 rounded-2xl appearance-none bg-white/80 backdrop-blur-sm shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all"
-                aria-label="Filter flashcards by type"
-              >
-                {types.map(type => (
-                  <option key={type} value={type}>{type}</option>
-                ))}
-              </select>
-              <Filter className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" aria-hidden="true" />
-            </div>
+              <div className="relative flex-1">
+                <label htmlFor="type-filter" className="sr-only">Filter by type</label>
+                <select
+                  id="type-filter"
+                  value={selectedType}
+                  onChange={(e) => setSelectedType(e.target.value)}
+                  className="w-full px-4 py-3 pr-10 text-sm rounded-2xl appearance-none bg-stone-100 border border-stone-300 focus:outline-none focus:ring-2 focus:ring-stone-500 focus:bg-stone-50 transition-all text-stone-800"
+                  aria-label="Filter flashcards by type"
+                >
+                  {types.map(type => (
+                    <option key={type} value={type}>{type}</option>
+                  ))}
+                </select>
+                <Filter className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" aria-hidden="true" />
+              </div>
 
-            {/* Action Buttons */}
-            <div className="flex gap-2">
-              <button
-                onClick={shuffleFlashcards}
-                className="px-4 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-2xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                aria-label="Shuffle flashcards (S key)"
-                title="Shuffle (S key)"
-              >
-                <Shuffle className="w-4 h-4" />
-              </button>
+              {/* Action Buttons */}
+              <div className="flex gap-2">
+                <button
+                  onClick={shuffleFlashcards}
+                  className="px-4 py-3 bg-stone-200 text-stone-800 rounded-2xl border border-stone-300 hover:bg-stone-300 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-stone-500"
+                  aria-label="Shuffle flashcards (S key)"
+                  title="Shuffle (S key)"
+                >
+                  <Shuffle className="w-4 h-4" />
+                </button>
 
-              <button
-                onClick={toggleShowAll}
-                className="px-4 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                aria-label={showAll ? "Hide all answers (A key)" : "Show all answers (A key)"}
-                title={showAll ? "Hide answers (A key)" : "Show answers (A key)"}
-              >
-                {showAll ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-              </button>
+                <button
+                  onClick={toggleShowAll}
+                  className="px-4 py-3 bg-stone-200 text-stone-800 rounded-2xl border border-stone-300 hover:bg-stone-300 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-stone-500"
+                  aria-label={showAll ? "Hide all answers (A key)" : "Show all answers (A key)"}
+                  title={showAll ? "Hide answers (A key)" : "Show answers (A key)"}
+                >
+                  {showAll ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
             </div>
           </div>
 
@@ -316,19 +316,19 @@ export default function Home() {
                   >
                     {/* Front of card */}
                     <div 
-                      className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl p-8 flex flex-col gap-6 overflow-hidden backface-hidden border border-gray-100"
+                      className="absolute inset-0 bg-gradient-to-br from-white to-stone-100 rounded-3xl shadow-2xl p-8 flex flex-col gap-6 overflow-hidden backface-hidden border border-stone-200"
                       style={{ backfaceVisibility: 'hidden' }}
                     >
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-medium">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-200 text-stone-700 text-xs font-medium">
                         {currentCard.type}
                       </div>
-                      <div className="flex-1 w-full overflow-y-auto text-center text-xl md:text-2xl font-bold text-gray-800 leading-relaxed pr-1">
+                      <div className="flex-1 w-full overflow-y-auto text-center text-[1.375rem] md:text-[1.65rem] font-bold text-stone-800 leading-relaxed pr-1">
                         {currentCard.question}
                       </div>
-                      <div className="text-xs text-gray-400 flex items-center gap-1 justify-center pt-4">
-                        <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                      <div className="text-xs text-stone-400 flex items-center gap-1 justify-center pt-4">
+                        <div className="w-1 h-1 bg-stone-400 rounded-full"></div>
                         <span>Press Space or Enter to flip</span>
-                        <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                        <div className="w-1 h-1 bg-stone-400 rounded-full"></div>
                       </div>
                     </div>
 
@@ -341,10 +341,10 @@ export default function Home() {
                       }}
                       aria-hidden={!isFlipped && !showAll}
                     >
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800 text-gray-100 text-xs font-medium border border-gray-700">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-stone-800 text-stone-100 text-xs font-medium border border-stone-600">
                         {currentCard.type}
                       </div>
-                      <div className="flex-1 w-full overflow-y-auto text-center text-xl md:text-2xl font-bold leading-relaxed pr-1">
+                      <div className="flex-1 w-full overflow-y-auto text-center text-[0.875rem] md:text-[1.05rem] font-bold leading-relaxed pr-1">
                         {currentCard.answer}
                       </div>
                     </div>
@@ -359,10 +359,10 @@ export default function Home() {
             <button
               onClick={prevCard}
               disabled={currentIndex === 0}
-              className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center ${
+              className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-stone-500 flex items-center justify-center ${
                 currentIndex === 0 
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
-                  : 'bg-white text-gray-700 hover:shadow-lg hover:scale-105 shadow-md'
+                  ? 'bg-stone-200 text-stone-400 cursor-not-allowed' 
+                  : 'bg-stone-200 text-stone-700 hover:bg-stone-300 shadow-sm'
               }`}
               aria-label="Previous flashcard (Left arrow key)"
               title="Previous (← key)"
@@ -377,8 +377,8 @@ export default function Home() {
                     key={index}
                     className={`flex-none transition-all duration-300 ${
                       index === currentIndex 
-                        ? 'w-8 h-2 bg-indigo-500 rounded-full' 
-                        : 'w-2 h-2 bg-gray-300 rounded-full hover:bg-gray-400'
+                        ? 'w-8 h-2 bg-stone-600 rounded-full' 
+                        : 'w-2 h-2 bg-stone-300 rounded-full hover:bg-stone-400'
                     }`}
                     aria-label={`Flashcard ${index + 1} ${index === currentIndex ? '(current)' : ''}`}
                     aria-current={index === currentIndex ? 'true' : 'false'}
@@ -390,10 +390,10 @@ export default function Home() {
             <button
               onClick={nextCard}
               disabled={currentIndex === filteredFlashcards.length - 1}
-              className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center ${
+              className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-stone-500 flex items-center justify-center ${
                 currentIndex === filteredFlashcards.length - 1 
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
-                  : 'bg-white text-gray-700 hover:shadow-lg hover:scale-105 shadow-md'
+                  ? 'bg-stone-200 text-stone-400 cursor-not-allowed' 
+                  : 'bg-stone-200 text-stone-700 hover:bg-stone-300 shadow-sm'
               }`}
               aria-label="Next flashcard (Right arrow key)"
               title="Next (→ key)"
@@ -404,16 +404,16 @@ export default function Home() {
 
           {/* Progress Bar */}
           <div className="mb-4">
-            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden" role="progressbar" aria-valuenow={currentIndex + 1} aria-valuemin={1} aria-valuemax={filteredFlashcards.length}>
+            <div className="w-full bg-stone-200 rounded-full h-2 overflow-hidden" role="progressbar" aria-valuenow={currentIndex + 1} aria-valuemin={1} aria-valuemax={filteredFlashcards.length}>
               <div 
-                className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-500 ease-out"
+                className="h-full bg-stone-600 rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${((currentIndex + 1) / filteredFlashcards.length) * 100}%` }}
               />
             </div>
           </div>
 
           {/* Keyboard Shortcuts Help */}
-          <footer className="text-center text-xs text-gray-500 space-y-1">
+          <footer className="text-center text-xs text-stone-500 space-y-1">
             <p>Keyboard: ← → Navigate | Space/Enter Flip | S Shuffle | A Show/Hide All</p>
           </footer>
         </div>

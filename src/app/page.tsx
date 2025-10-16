@@ -355,11 +355,11 @@ export default function Home() {
           </main>
 
           {/* Navigation */}
-          <nav className="flex items-center justify-between gap-4 mb-8" aria-label="Flashcard navigation">
+          <nav className="flex items-center gap-4 mb-8" aria-label="Flashcard navigation">
             <button
               onClick={prevCard}
               disabled={currentIndex === 0}
-              className={`flex-1 py-4 rounded-2xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center ${
                 currentIndex === 0 
                   ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
                   : 'bg-white text-gray-700 hover:shadow-lg hover:scale-105 shadow-md'
@@ -370,25 +370,27 @@ export default function Home() {
               <ChevronLeft className="w-5 h-5 mx-auto" />
             </button>
 
-            <div className="flex items-center gap-2 px-4" aria-label="Progress indicators">
-              {filteredFlashcards.map((_, index) => (
-                <div
-                  key={index}
-                  className={`transition-all duration-300 ${
-                    index === currentIndex 
-                      ? 'w-8 h-2 bg-indigo-500 rounded-full' 
-                      : 'w-2 h-2 bg-gray-300 rounded-full hover:bg-gray-400'
-                  }`}
-                  aria-label={`Flashcard ${index + 1} ${index === currentIndex ? '(current)' : ''}`}
-                  aria-current={index === currentIndex ? 'true' : 'false'}
-                />
-              ))}
+            <div className="flex-1 max-w-full overflow-x-auto px-1" aria-label="Progress indicators">
+              <div className="flex items-center gap-2 min-w-max pr-3">
+                {filteredFlashcards.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`flex-none transition-all duration-300 ${
+                      index === currentIndex 
+                        ? 'w-8 h-2 bg-indigo-500 rounded-full' 
+                        : 'w-2 h-2 bg-gray-300 rounded-full hover:bg-gray-400'
+                    }`}
+                    aria-label={`Flashcard ${index + 1} ${index === currentIndex ? '(current)' : ''}`}
+                    aria-current={index === currentIndex ? 'true' : 'false'}
+                  />
+                ))}
+              </div>
             </div>
 
             <button
               onClick={nextCard}
               disabled={currentIndex === filteredFlashcards.length - 1}
-              className={`flex-1 py-4 rounded-2xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+              className={`flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 flex items-center justify-center ${
                 currentIndex === filteredFlashcards.length - 1 
                   ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
                   : 'bg-white text-gray-700 hover:shadow-lg hover:scale-105 shadow-md'

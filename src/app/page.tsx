@@ -334,17 +334,17 @@ export default function Home() {
 
                     {/* Back of card */}
                     <div 
-                      className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl shadow-2xl p-8 flex flex-col gap-6 overflow-hidden rotate-y-180 backface-hidden"
+                      className="absolute inset-0 rounded-3xl shadow-2xl p-8 flex flex-col gap-6 overflow-hidden rotate-y-180 backface-hidden bg-gray-900 text-gray-100"
                       style={{ 
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
                       }}
                       aria-hidden={!isFlipped && !showAll}
                     >
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium">
+                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800 text-gray-100 text-xs font-medium border border-gray-700">
                         {currentCard.type}
                       </div>
-                      <div className="flex-1 w-full overflow-y-auto text-center text-xl md:text-2xl font-bold text-white leading-relaxed pr-1">
+                      <div className="flex-1 w-full overflow-y-auto text-center text-xl md:text-2xl font-bold leading-relaxed pr-1">
                         {currentCard.answer}
                       </div>
                     </div>
